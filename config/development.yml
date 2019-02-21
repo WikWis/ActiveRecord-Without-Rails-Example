@@ -1,0 +1,8 @@
+host: 'localhost'
+adapter: 'postgresql'
+database: 'db_development'
+port: '5432'
+username: 'some_name'
+password: 'some_password'
+encoding: 'utf8'
+pool: 5
