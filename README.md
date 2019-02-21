@@ -1,0 +1,2 @@
+# ActiverRecordWithoutRails
+Simple ruby project.
