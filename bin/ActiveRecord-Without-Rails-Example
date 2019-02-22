@@ -4,7 +4,7 @@ $:.unshift(File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib')))
 
 require 'ActiveRecord-Without-Rails-Example'
 
-ActiveRecord::Base.establish_connection(YAML::load(File.open('./config/development.yml')))
+ActiveRecord::Base.establish_connection(YAML::load(File.open('../config/development.yml')))
 
 user = User.create(name: "Robert", surname: "Skóra", birth_day: Date.new(1900,1,1))
 

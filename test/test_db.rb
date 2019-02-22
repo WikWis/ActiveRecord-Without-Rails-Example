@@ -1,11 +1,11 @@
 require 'bundler/setup'
 require 'test-unit'
-require './lib/ActiveRecord-Without-Rails-Example/user'
+require_relative '../lib/ActiveRecord-Without-Rails-Example/user'
 
 class TestDb < Test::Unit::TestCase
 
   def setup
-    ActiveRecord::Base.establish_connection(YAML::load(File.open('./config/test.yml')))
+    ActiveRecord::Base.establish_connection(YAML::load(File.open('../config/test.yml')))
     User.destroy_all
   end
 

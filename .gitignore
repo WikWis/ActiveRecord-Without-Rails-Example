@@ -1,3 +1,5 @@
 /.idea
 /UserWithDbConnection.iml
 /Gemfile.lock
+/config/development.yml
+/config/test.yml

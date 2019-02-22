@@ -1,12 +1,12 @@
 require 'bundler/setup'
 require 'test-unit'
-require './lib/ActiveRecord-Without-Rails-Example/user'
+require_relative '../lib/ActiveRecord-Without-Rails-Example/user'
 
 class TestClassUser < Test::Unit::TestCase
 
   def setup
     @excepted_to_s_value = "id: 1, name: Andrzej, lastname: Duda, birthday: 16-05-1972"
-    ActiveRecord::Base.establish_connection(YAML::load(File.open('./config/test.yml')))
+    ActiveRecord::Base.establish_connection(YAML::load(File.open('../config/test.yml')))
   end
 
   def test_create_user
