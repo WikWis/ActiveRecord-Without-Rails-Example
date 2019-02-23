@@ -1,7 +1,7 @@
 # ActiveRecord-Without-Rails-Example
 Simple example of using ActiveRecord without Rails, with one to many association.
 
-##**Running Project**
+## Running Project
 
 Open project and in console type:
 
