@@ -3,10 +3,9 @@ require 'test-unit'
 require_relative '../lib/ActiveRecord-Without-Rails-Example/user'
 
 class TestClassUser < Test::Unit::TestCase
-
   def setup
-    @excepted_to_s_value = "id: 1, name: Andrzej, lastname: Duda, birthday: 16-05-1972"
     ActiveRecord::Base.establish_connection(YAML::load(File.open('../config/test.yml')))
+    @excepted_to_s_value = "id: 1, name: Andrzej, lastname: Duda, birthday: 16-05-1972"
   end
 
   def test_create_user
@@ -17,10 +16,6 @@ class TestClassUser < Test::Unit::TestCase
       u.birth_day = Date.new(1972,5,16)
     end
 
-    assert_equal(
-        @excepted_to_s_value,
-        user.to_s,
-        "Error with creating user"
-    )
+    assert_equal(@excepted_to_s_value, user.to_s, "Error with creating user")
   end
 end

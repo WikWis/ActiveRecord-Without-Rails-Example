@@ -9,6 +9,14 @@ ActiveRecord::Schema.define do
     t.string :name, null: false
     t.string :surname, null: false
     t.date :birth_day, null: false
+    t.timestamps
+  end
+
+  create_table(:posts, force: true) do |t|
+    t.belongs_to :user, index: true
+    t.string :title, null: false
+    t.text :body, null:false
+    t.timestamps
   end
 end
 
@@ -19,5 +27,13 @@ ActiveRecord::Schema.define do
     t.string :name, null: false
     t.string :surname, null: false
     t.date :birth_day, null: false
+    t.timestamps
+  end
+
+  create_table(:posts, force: true) do |t|
+    t.belongs_to :user, index: true
+    t.string :title, null: false
+    t.text :body, null:false
+    t.timestamps
   end
 end

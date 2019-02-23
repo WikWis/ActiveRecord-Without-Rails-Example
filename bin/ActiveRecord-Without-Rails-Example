@@ -6,11 +6,17 @@ require 'ActiveRecord-Without-Rails-Example'
 
 ActiveRecord::Base.establish_connection(YAML::load(File.open('../config/development.yml')))
 
-user = User.create(name: "Robert", surname: "Skóra", birth_day: Date.new(1900,1,1))
+user = User.create(name: "Robert", surname: "Skóra", birth_day: Date.new(1900, 1, 1))
+post = Post.create(title: "some title", body: "some body", user_id: user.id)
 
 users = User.all
 
-puts "\nUsers from database: "
+puts "Users from database with their posts:"
+puts "-----------------------------------------------------------"
 users.each do |user|
-  puts user.to_s
+  puts "#{user.name} #{user.surname} (id: #{user.id}) with posts: "
+  user.posts.each do |post|
+    puts post.to_s
+  end
+  puts "-----------------------------------------------------------"
 end

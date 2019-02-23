@@ -1,15 +1,15 @@
 require 'bundler/setup'
+require 'date'
 require 'test-unit'
 require_relative '../lib/ActiveRecord-Without-Rails-Example/user'
 
-class TestDb < Test::Unit::TestCase
-
+class UserWithDbTest < Test::Unit::TestCase
   def setup
     ActiveRecord::Base.establish_connection(YAML::load(File.open('../config/test.yml')))
     User.destroy_all
   end
 
-  def test_get_data_from_db
+  def test_get_users_from_db
     assert_equal([], User.all)
   end
 
